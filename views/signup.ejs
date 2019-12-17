@@ -1,0 +1,31 @@
+<% include partials/_header %>
+
+<div class="body">
+
+  <div class="container index">
+    <h1>Sign Up!</h1>
+    <div class="form-container">
+
+      <form class="login-signup-form" action="/signup" method="POST">
+        <input type="text" name="username" placeholder="Username" autofocus />
+        <input type="password" name="password" placeholder="Password" />
+        <button class="success-button" type="submit">Sign Up</button>
+      </form>
+
+      <p>Already have an account? <a href="/login">Log In</a></p>
+
+    </div>
+    <% if (errors.length > 0) { %>
+      <div class="errors">
+        <ul>
+          <% errors.forEach((error) => { %>
+            <li><%= error %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+  </div>
+
+</div>
+
+<% include partials/_footer %>
